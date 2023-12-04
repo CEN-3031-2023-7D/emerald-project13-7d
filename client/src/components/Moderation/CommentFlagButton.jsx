@@ -29,7 +29,7 @@ export default function CommentFlagButton({galleryID}){
     setClicked(true);
     getReportFromGalleryID(galleryID).then(report => {
       if (report.data.length == 0) { //if report does not exist...
-        const content = {id: galleryID, view_count: 1, like_count: 0 ,user_name: "liam", type: "Project", title:"", text: "hii"};
+        const content = {id: galleryID, view_count: 1, like_count: 0 ,user_name: "liam", type: "Project", title:"", text: "hii"};  //getGalleryPost() should be used to populate this data
         let studentID = sessionStorage.getItem('user')
         if(studentID){
           studentID = studentID.substring(1, studentID.length - 1);
