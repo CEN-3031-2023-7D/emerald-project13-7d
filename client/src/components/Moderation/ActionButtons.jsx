@@ -1,12 +1,13 @@
 import React from 'react';
 import './ActionButtons.less';
-import { getReport, updateReport, updateGloballyHidden, updateReportStatus } from "../../Utils/requests";
+import { updateGloballyHidden, updateReportStatus } from "../../Utils/requests";
 import { Button } from 'antd';
 
 export default function ActionButtons({reportID, display = 0}) {
 
   function Approve() {
-    // Mark content as appropriate and remove any restrictions on it
+    // This function marks the content as "approved", meaning the moderator has deemed it appropriate
+    // Alert the moderator
     alert("The content has been approved! Report ID: " + reportID);
     
     // Use setter from requests.js to update status column as approved
@@ -17,7 +18,8 @@ export default function ActionButtons({reportID, display = 0}) {
   }
 
   function Reject() {
-    // Mark content as inappropriate and restrict it from being displayed publically
+    // This function marks the content as "rejected", meaning the moderator has deemed it inappropriate
+    // Alert the moderator
     alert("The content has been rejected! Report ID: " + reportID);
 
     // Use setter from requests.js to update status column as rejected
@@ -27,6 +29,8 @@ export default function ActionButtons({reportID, display = 0}) {
     updateGloballyHidden(reportID, 1);
   }
 
+  // The code below allows for the developer to decide which buttons are displayed in a given
+  // implementation. 0 for both buttons, 1 for approve, and 2 for reject. 0 is default.
   if (display == 0) {
     return (
       <span className="ActionButtons">
