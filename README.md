@@ -1,3 +1,40 @@
+## Final Project Documentation
+
+Features Implemented
+- [Moderation Page](https://imgur.com/a/nOVMaIX)
+- [Flag Button](https://imgur.com/a/pDkSvJN)
+- [Action Buttons](https://imgur.com/a/d9ODey6)
+- [Wrench Button](https://imgur.com/a/zbEntca)
+
+Running the Project Locally
+- Back End Setup:
+	1. Install Docker - https://docs.docker.com/get-docker/
+	2. Run `docker compose up` from `/`
+- Front End Setup:
+	1. Install Node and Yarn
+	2. Run `yarn` from `/client` to install project dependencies
+	3. Run `yarn start` to startup the client (please note that much of the functionality will not work without also starting up the backend services)
+	4. Navigate to chrome://flags/ and enable the #enable-experimental-web-platform-features flag (This will provide your browser access to serial ports)
+- Running the Project:
+	1. Navigate to http://localhost:1337/admin/auth/login and log in with the following credentials:
+	  Email: superadmin@mail.com
+		Password: TN9q6RZhDaw6
+	2. Navigate to http://localhost:3000/teacherlogin and log in with the following credentials:
+		Email: contentcreator
+		Password: easypassword
+	3. Navigate to http://localhost:3000/galleryadmin to access the moderation page, /flag to test the flag button functionality, /administrator to test the action button functionality, or /wrenchtest to test the wrench button functionality.
+
+How to Update the Database and Server Connections
+- For this project, we are using the Strapi collection type as our database, which is automatically connected.
+
+Update the Database and Strapi Dump Files in your File Directory
+- Our work does not require updating the database and/or Strapi dump files.
+
+Outstanding Work
+- Integrate our work with that of other groups such as the Gallery team
+- Finish up wrench button
+- Develop a system for newly-submitted posts/comments to be automatically scanned for inappropriate content before being posted to the gallery
+
 # CaSMM
 
 > Computation and Science Modeling through Making
